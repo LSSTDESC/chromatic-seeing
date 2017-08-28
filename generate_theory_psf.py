@@ -11,7 +11,7 @@ import math
 # lams = xrange(300, 1200, 100) nm
 # diam = 8.0 m
 ###
-PATH = '/Users/kylegulshen/Desktop/'
+PATH = dirname(realpath(__file__))+'/theory_PSFs/'
 
 arcsec_per_rad = 648000./math.pi
 diam0 = 8
