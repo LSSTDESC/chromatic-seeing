@@ -1,6 +1,6 @@
 import sys
 from os import listdir
-from os.path import isfile, join
+from os.path import isfile, join, dirname, realpath
 import math
 import galsim
 import numpy as np
@@ -10,7 +10,7 @@ import matplotlib.patches as mpatches
 import itertools
 import re
 
-PATH = '/Users/kylegulshen/Desktop/complete psf research/'
+PATH = dirname(realpath(__file__))+'/'
 
 sim_args_def = dict(
 seed        = 1     ,	# seed of random number generator for both wind and phase screen generation   
@@ -38,7 +38,7 @@ max_speed   = 20.0  ,	# maximum windspeed for generated atmosphere screens.
 take_snapshots = -1.) 	# save consecutive x second snapshots of the exposure. 
 
 arcsec_per_rad = 648000./math.pi
-sigma_def       = 300 # in arcseconds. You may want to tune this as it is untested
+sigma_def       = 300 # in arcseconds. You may want to tune this--I did not test it
 
 #some color dicts I used. 
 L0_colors = {4:'r', 6:'orange', 8:'gold', 10:'g', 15:'c' , 25:'b', 50:'purple', 75:'m', 100:'black', 1000: 'red', 1000000: 'green', 1000000000: 'blue', np.inf:'grey'}
@@ -108,7 +108,7 @@ def get_saved_radial(saved_radial_file, data_entry_name, Ix, Iy, alphas, image_a
 	"""
 	with open(saved_radial_file, 'r') as f:
 	    lines = f.read()
-	    data = re.findall(r'{}_radial\[(.*?)\]'.format(data_entry_name),lines,re.DOTALL)
+	    data = re.findall(r'{}\[(.*?)\]'.format(data_entry_name),lines,re.DOTALL)
 
 	    if len(data) == 0:
 			print data_entry_name+" radial not found, generating radial now."
@@ -220,7 +220,7 @@ def plot_theory_FWHM_vs_Wavelength(alphas,L0s,lams,diam,r0_500):
 
 
 def generate_file_name(args):
-	"""this will create a file name identical to the fits file generated when simulating a psf with given args
+	"""this will create a file name identical to the name of the fits file generated when simulating a psf with given args
 	"""
 	file = "lam"+str(args["lam"]) + "_seed"+str(args["seed"]) + "_L0"+str(args["L0"])
 	for attr, value in sim_args_def.iteritems():
