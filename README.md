@@ -7,7 +7,7 @@ Original use of these programs was to compare the GalSim simulations generated b
 Link to presentation
 https://docs.google.com/presentation/d/1dzB7xHbTjP1Q4Crbw64JSBjJHxzfnBSHlbU9miCT6WY/edit?usp=sharing
 
-The study shows a definite departure from the Kolmogorov prediction for the wavelength dependence of the PSF size (FWHM proportional to \lambda^{-1/5}) that depends on the outer scale.  
+The study shows a definite departure from the Kolmogorov prediction for the wavelength dependence of the PSF size (FWHM proportional to <a href="http://www.codecogs.com/eqnedit.php?latex=\lambda^{-1/5}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\lambda^{-1/5}" title="\lambda^{-1/5}" /></a>) that depends on the outer scale.  
 
 This analysis and many of the graphs found in the presentation were done using modifications of psf_image_analysis.py run on simulations generated with the two other scripts, given relevant input parameters. For example, running psf_image_analysis.py on the provided sample images in the sample_images folder and theoretical profiles in the theory_PSFs folder produces the plot FWHM vs. Wavelength.png
 
