@@ -40,3 +40,9 @@ The intended worflow when using these three programs in tandem is as follows:
 2) run generate_theory_psf.py for each pair of these parameters to create a theory psf file for each
 3) run generate_simulation_psf.py for each pair of parameters, taking care to match the diameter and Fried parameter used for the theoretical PSFs. There are still many more parameters for the simulation (e.g. exposure time) that may affect the comparison with theory. 
 4) among all of the PSFs simulated thus far, specify which range of parameters you wish to analyze by updating the ranged_args dict in the main of psf_image_analysis.py, and specifying any individual non-default parameter that is the same accross all simulations by altering the relevant value in the args dict. The program will then generate or retrieve a radial profile for each simulation of the given parameters, which can then be compared and plotted against the corresponding theoretical prediction
+
+
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+
+This work was conducted by Kyle Gulshen, in collaboration with Pat Burchat and Josh Meyers, at Stanford University in 2016/2017. Work was supported by the Office of the Vice Provost for Undergraduate Education at Stanford and by the National Science Foundation. 
