@@ -1,4 +1,4 @@
-# atmospheric-seeing
+# chromatic-seeing
 
 The purpose of this package is to study the wavelength dependence of atmospheric seeing predicted in two ways:  (1) numerical computations of analytic formulae that are valid for infinite exposure time, and (2) simulations corresponding to finite exposure time. In both cases, the predicted PSF is based on a von Karman phase power spectrum, which is modified from the Kolmogorov spectrum to take into account the non-infinite outer scale — i.e., it limits the power at large scales. The simulation, which is implemented in GalSim, models the 3-dimensional turbulence in the atmosphere as a series of 2-dimensional phase screens at different altitudes, through which the LSST pupil can be projected, and the instantaneous PSF derived via Fourier optics. The screens independently drift with the wind in each layer, and the net PSF for a finite exposure time is accumulated in steps. For more details on GalSim, see https://github.com/GalSim-developers/GalSim
 
